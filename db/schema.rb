@@ -10,36 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305141536) do
+ActiveRecord::Schema.define(version: 20180305232326) do
 
   create_table "carts", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_carts_on_product_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
-  end
-
-  create_table "destroys", force: :cascade do |t|
-    t.string "Prod"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "prods", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.decimal "price"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "EUR", null: false
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cart_id"
+    t.index ["cart_id"], name: "index_products_on_cart_id"
   end
 
   create_table "users", force: :cascade do |t|
