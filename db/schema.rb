@@ -13,18 +13,32 @@
 ActiveRecord::Schema.define(version: 20180305231044) do
 
   create_table "carts", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "{:foreign_key=>true}_id"
+    t.index ["product_id"], name: "index_carts_on_product_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
+    t.index ["{:foreign_key=>true}_id"], name: "index_carts_on_{:foreign_key=>true}_id"
+  end
+
+  create_table "destroys", force: :cascade do |t|
+    t.string "Prod"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prods", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "price_cents", default: 0, null: false
-    t.string "price_currency", default: "EUR", null: false
+    t.decimal "price"
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
