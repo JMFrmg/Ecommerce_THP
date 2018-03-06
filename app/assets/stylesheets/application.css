@@ -10,6 +10,18 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap.min.css
+ *= require flexslider.css
+ *= require font-awesome.css
+ *= require jquery.mCustomScrollbar.css
+ *= require layers.css
+ *= require navigation.css
+ *= require owl.carousel.css
+ *= require owl.theme.default.css
+ *= require Pe-icon-7-stroke.css
+ *= require settings.css
+ *= require style.css
+ *= require yamm.css
  *= require_tree .
  *= require_self
  */
