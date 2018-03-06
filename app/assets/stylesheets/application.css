@@ -22,7 +22,6 @@
  *= require settings.css
  *= require style.css
  *= require yamm.css
- *= require setting-ver.css
  *= require_tree .
  *= require_self
  */
