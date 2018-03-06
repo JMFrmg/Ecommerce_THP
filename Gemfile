@@ -31,7 +31,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'money-rails', '~>1'
 gem 'bootstrap'
 gem 'bootswatch'
 gem 'jquery-rails'
