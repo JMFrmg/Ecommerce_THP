@@ -24,7 +24,7 @@
 //= require jquery.themepunch.enablelog
 //= require jquery.themepunch.revolution.min
 //= require jquery.themepunch.tools.min
-//= require owl.carousel.min
+//= require owl.carousel
 //= require revolution.extension.layeranimation.min
 //= require revolution.extension.navigation.min
 //= require revolution.extension.slideanims.min

@@ -32,7 +32,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
-gem 'bootswatch'
 gem 'jquery-rails'
 gem 'bcrypt', '3.1.11'
 gem 'gravatar_image_tag'
