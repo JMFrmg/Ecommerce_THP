@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
   resources :products
 
-  get 'carts/show'
-  get 'carts/destroy'
+  resources :carts
+
+  post 'carts/buy/:id', to: 'carts#buy', as: 'buycart'
+
   post 'carts/addproduct'
 
   devise_for :users

@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :ensure_login
   def index
   	@orders = current_user.orders
 
@@ -8,4 +9,7 @@ class OrdersController < ApplicationController
   	@order = Order.find(params[:id])
   	@products = @order.products
   end
+
+  
+  
 end

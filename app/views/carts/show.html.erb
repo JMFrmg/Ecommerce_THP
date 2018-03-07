@@ -1,11 +1,36 @@
 <p> <%= @cart.name %> </p>
-
-<p> <% @cart_products.each do |product| %>
+<% @sumprices = 0 %>
+<p> <% @products.each do |product| %>
+<% @sumprices += product.price %>
 <%= product.title %> <br />
 <%= product.description %> <br />
 <%= product.price %> <br />
 <%= product.image_url %> <br />
 <% end %> </p>
+
+<div>
+	<%= form_tag buycart_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <p>Montant à payer : <%=@sumprices %> euros</p>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Montant total du panier :"
+          data-amount="<%= @sumprices * 100 %>"
+          data-currency="eur"
+          data-locale="auto"></script>
+<% end %>
+  </div>
+
 <p>
-  <%= link_to "Supprimer le panier", carts_destroy_path, class: "btn btn-secondary" %>
+  <%= link_to "Supprimer le panier", carts_path, class: "btn btn-secondary" %>
 </p>
+
