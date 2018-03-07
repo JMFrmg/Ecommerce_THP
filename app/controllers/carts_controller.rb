@@ -3,7 +3,7 @@ class CartsController < ApplicationController
 
   def show
   	@cart = current_user.cart
-  	@cart_products = @cart.products
+  	@products = @cart.products
   end
 
   def addproduct
@@ -14,6 +14,12 @@ class CartsController < ApplicationController
   	redirect_to home_index_path
   end
 
+  def takeoff
+    @cart = current_user.cart
+    @product = Product.find(params[id])
+    @cart.products.delete(@product)
+    redirect_to @cart
+  end
 
   def destroy
   	@cart = current_user.cart
@@ -21,5 +27,39 @@ class CartsController < ApplicationController
   	redirect_to home_index_path
 
   end
+
+  def buy
+
+    require 'stripe'
+    @order = Order.find(current_user.id)
+    @products = @order.products
+    @sum = 0
+    @products.each do |product| 
+      @sum += product.price
+    end
+    @amount = (@sum*100).to_i
+    customer = Stripe::Customer.create(
+    :email => params[:stripeEmail],
+    :source  => params[:stripeToken]
+  )
+
+  charge = Stripe::Charge.create(
+    :customer    => customer.id,
+    :amount      => @amount,
+    :description => 'Rails Stripe customer',
+    :currency    => 'usd'
+  )
+
+
+    @order = Order.new
+    @user = current_user
+    @order.products = @products
+    @user.orders << @order
+    @user.save
+    @order.save
+    @user.cart.destroy
+    flash[:success] = "Merci pour votre achat :)" 
+    redirect_to root_path
+    end
 
 end

@@ -1,4 +1,6 @@
+
 <%= render 'layouts/header' %>
+<% @sumprices = 0 %>
     <!--breadcrumb start-->
         <div class="breadcrumb-wrapper">
             <div class="container">
@@ -21,15 +23,24 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <% @cart_products.each do |product| %>
-                            <td class="product-image">
+                            <% @products.each do |product| %>
+                              <% @sumprices += product.price %>
+                              <td class="product-image">
                                 <%= image_tag(product.image_url, :atl => "", :width => 300, :height => 250, :crop => :fill) %>
-                            </td>
-                            <td class='product-name'><%= product.title %></td>
-                            <td class="product-price"><%= product.price %></td>
-                            <td class='product-delete'><%= link_to "Supprimer le panier", carts_destroy_path, class: "btn btn-secondary" %><i class="fa fa-times"></i></a></td>
+                              </td>
+                              <td class='product-name'><%= product.title %></td>
+                              <td class="product-price"><%= product.price %></td>
+                              <td class='product-delete'><%= link_to "Supprimer du panier", class: "btn btn-secondary" %><i class="fa fa-times"></i></td>
+
+                            <% end %>
+
+
+
+
+
+                              	
                         </tr>
-                        <% end %>
+                        
                     </tbody>
                 </table><!--cart table-->
             </div>
@@ -59,13 +70,33 @@
                                 </tr>
                                  <tr>
                                     <td>Total</td>
-                                    <td class="total">$2456.00</td>
+                                    <td class="total"><%=@sumprices%></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2"> <a href="#" class="btn btn-lg btn-skin">Proceed to checkout</a></td>
+                                    <div>
+	
                                 </tr>
                             </tbody>
                         </table>
+                        <%= form_tag buycart_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Montant total du panier :"
+          data-amount="<%= @sumprices * 100 %>"
+          data-currency="eur"
+          data-locale="auto"></script>
+<% end %>
+  </div>
                     </div>
                 </div>
             </div>
@@ -73,3 +104,10 @@
         <div class="space-60"></div>
 
   <%= render 'layouts/footer' %>
+
+
+
+
+
+
+

@@ -40,6 +40,7 @@ gem 'devise'
 gem 'jquery'
 #gem 'pg', '0.20.0'
 gem 'sqlite3'
+gem 'stripe'
 
 
 group :development, :test do
