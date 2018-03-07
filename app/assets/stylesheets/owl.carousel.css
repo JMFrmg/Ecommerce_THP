@@ -6,7 +6,7 @@
 /*
  *  Owl Carousel - Core
  */
- .icon {
+/*.icon {
   background: rgba(255, 255, 255, .6);
   color: rgba(0, 0, 0, .3);
 	font-family: 'FontAwesome';
@@ -40,12 +40,13 @@
 .icon-arrow-right7 { right: 0; }
 .icon-arrow-right7:before { content: "\f054"; }
 
+ */
 @media (min-width: 768px) {
   .container {
     /* background: #eee; */
     margin: 0 auto;
     overflow: hidden;
-    width: 700px;
+    width: 1200px;
   }
   .owl-carousel {
     margin: 0 -60px;
