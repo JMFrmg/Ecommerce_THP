@@ -24,7 +24,7 @@
                         <div class="col-sm-6 text-right">
                             <ul class="list-inline">
                                 <li class="hidden-xs"><a href="#" class="offers">offres</a></li>
-                                <li class="hidden-xs"><a href="#"><i class="pe-7s-user"></i> inscription</a></li>
+                                <li class="hidden-xs"><%= link_to content_tag(:i, nil, class: 'pe-7s-user') + " S'inscrire ", new_user_registration_path %></li>
                                 <li><a href="#"><i class="pe-7s-lock"></i> connection</a></li>
                                 <li class="lang-dropdown">
                                     <a href="#"><%= image_tag("flag1.png") %> English <i class="fa fa-angle-down"></i></a>
