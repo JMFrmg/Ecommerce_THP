@@ -441,7 +441,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="blocks-col">
-                            <%= image_tag("bg/bg-2.jpg", :alt => "", :class => "img-responsive") %>
+                            <%= image_tag("chat/cat2.jpg", :alt => "", :class => "img-responsive") %>
                             <div class="block-overlay">
                                 <h4>Chat star</h4>
                                 <p>Promo</p>
@@ -450,7 +450,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="blocks-col">
-                            <%= image_tag("bg/bg-3.jpg", :alt => "", :class => "img-responsive") %>
+                            <%= image_tag("chat/cat22.jpg", :alt => "", :class => "img-responsive") %>
                             <div class="block-overlay">
                                 <h4>Accessories</h4>
                                 <p>essayer  </p>
@@ -459,7 +459,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="blocks-col">
-                            <%= image_tag("bg/bg-1.jpg", :alt => "", :class => "img-responsive") %>
+                            <%= image_tag("chat/cat1.jpg", :alt => "", :class => "img-responsive") %>
                             <div class="block-overlay">
                                 <h4>Incontournable</h4>
                                 <p>Les bons plans </p>
@@ -545,7 +545,7 @@
         <!--end new arrivals-->
         <div class='space-60'></div>
         <!--parallax section start-->
-        <section class="parallax">
+    <!--    <section class="parallax">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1 text-center">
@@ -554,46 +554,63 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!--parallax section end-->
         <div class='space-60'></div>
 
         <!--popular products-->
         <section class="featured-products">
             <div class="container">
-                <h2 class="section-heading">Popular products</h2>
+                <h2 class="section-heading">Produits populaires</h2>
+                <!-- boucle pour intégration des produits -->
+                <% @products.each do |product| %>
+                    <div class="col-sm-4 ">
+                        <div class="item_holder">
+                            <a href="/items/<%=product.id%>">
+                            <%= image_tag product.image_url, :class => "img-responsive" %>
+                            </a>
+                            <div class="title">
+                                <h5><%= product.title%></h5>
+                                <p> <%= product.description%> </p>
+                                <span class="price"><%= product.price%>€</span>
+                                
+                            </div>
+                        </div><!--item holder-->
+                    </div><!--col end-->
+                <% end %>
+
                 <div class="row">
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("women/1.JPG", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/7.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
-                                <h5>Sky-Blue <br>Short Skirt</h5>
-                                <span class="price">$29.99</span>
+                                <h5></h5>
+                                <span class="price"></span>
                             </div>
                         </div><!--item holder-->
                     </div><!--col end-->
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder out-of-stock">
                             <span class="out-stock-label">Out of stock</span>
-                            <a href="#"><%= image_tag("men/1.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/8.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
-                                <h5>Sky-Blue <br>Short Skirt</h5>
-                                <span class="price">$29.99</span>
+                                <h5></h5>
+                                <span class="price"></span>
                             </div>
                         </div><!--item holder-->
                     </div><!--col end-->
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("men/2.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/9.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
-                                <h5>Sky-Blue <br>Short Skirt</h5>
-                                <span class="price">$29.99</span>
+                                <h5><br></h5>
+                                <span class="price"></span>
                             </div>
                         </div><!--item holder-->
                     </div><!--col end-->
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("women/2.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/10.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -605,7 +622,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("women/1.JPG", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/11.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -615,7 +632,7 @@
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
                             <span class="offer-lablel">50% off</span>
-                            <a href="#"><%= image_tag("men/5.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/12.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -624,7 +641,7 @@
                     </div><!--col end-->
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("men/7.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/13.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -633,7 +650,7 @@
                     </div><!--col end-->
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("men/4.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chat/14.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -645,7 +662,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("women/8.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("bchat/2.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -654,7 +671,7 @@
                     </div><!--col end-->
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("men/3.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("bchat/3.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -663,7 +680,7 @@
                     </div><!--col end-->
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
-                            <a href="#"><%= image_tag("men/10.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chaton/2.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
@@ -673,7 +690,7 @@
                     <div class="col-sm-6 col-md-3 ">
                         <div class="item_holder">
                             <span class="label-new">New Arrived</span>
-                            <a href="#"><%= image_tag("women/10.jpg", :alt => "", :class => "img-responsive") %></a>
+                            <a href="#"><%= image_tag("chaton/4.jpg", :alt => "", :class => "img-responsive") %></a>
                             <div class="title">
                                 <h5>Sky-Blue <br>Short Skirt</h5>
                                 <span class="price">$29.99</span>
