@@ -1,35 +1,86 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autocomplete: "username" %>
-  </div>
+ <div class="breadcrumb-wrapper">
+            <div class="container">
+                <h1>Inscription ou connection</h1>
+            </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        </div>
+        <!--end breadcrumb-->
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= devise_error_messages! %>
+        <div class="space-60"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="sky-form-login">
+                      
+                            <h3 class="text-left"><i class="fa fa-user"></i>Créez votre compte</h3>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                            <fieldset>          
+                                <section>
+                                    <div class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                          <% f.label :username %>
+                                          <%= f.text_field :username, autocomplete: "username", placeholder: "Nom d'utilisateur ..." %>
+                                    </div>
+                                    
+                                </section>
 
-  S
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+                                <section>
+                                  <div class="input">  
+                                    <i class="icon-append fa fa-envelope-o"></i>              
+                                    <% f.label :email %>
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Adresse email ..." %>
+                                    </div>
 
-<%= render "devise/shared/links" %>
+                                </section>
+
+                                <section>
+                                  <div class="input">  
+                                        <i class="icon-append fa fa-lock"> </i>
+                                            <% f.label :password %>
+                                            <% if @minimum_password_length %>                 
+                                            <% end %>
+                                            <%= f.password_field :password, autocomplete: "off", placeholder: "Mot de passe ...", title:"#{ @minimum_password_length } caractères minimum"  %>
+                                    </div>
+                                    
+                                </section>
+
+                                <section>
+                                  <div class="input">  
+                                        <i class="icon-append fa fa-lock"> </i>
+                                        <% f.label :password_confirmation %>
+                                        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmation du mot de passe ..." %>
+                                  </div>
+                                    
+                                </section>
+                            </fieldset>
+
+                                <section>
+                                    <label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>Je veux être averti des nouveautées et recevoir des offres par Email</label>
+                                    <label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>Je suis d'accord avec les termes et conditions</label>
+                                </section>
+                            </fieldset>
+                            <footer>
+                              <%= f.submit "Créer mon compte", class: "actions btn btn-skin btn-lg"%>
+                            </footer>
+                        <% end %>
+
+                   
+                    </div>
+                </div><!--col end-->
+                <div class="col-md-6">
+                    <div class="login-register-aside-box">
+                        <h3>J'ai déjà un compte!</h3>
+                        <p>
+                            Si vous êtes déjà l'heureux titulaire d'un compte chez cat & co, nous vous invitons cordialement à cliquer sur le bouton juste en dessous.
+                        </p>
+                        <br>
+                        <%= link_to "Connectez-vous", new_user_session_path, class: "btn btn-light-dark btn-lg" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-60"></div>
