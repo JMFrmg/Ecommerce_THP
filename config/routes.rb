@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  get 'carts/show'
+  get 'carts/destroy'
+
   devise_for :users
   get 'home/index'
   

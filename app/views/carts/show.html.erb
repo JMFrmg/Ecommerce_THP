@@ -1,0 +1,11 @@
+<p> <%= @cart.name %> </p>
+
+<p> <% @cart_products.each do |product| %>
+<%= product.title %> <br />
+<%= product.description %> <br />
+<%= product.price %> <br />
+<%= product.image_url %> <br />
+<% end %> </p>
+<p>
+  <%= link_to "Supprimer le panier", carts_destroy_path, class: "btn btn-secondary" %>
+</p>
