@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  before_action :ensure_login
+
   def show
   	@cart = current_user.cart
   	@cart_products = @cart.products
@@ -19,4 +21,5 @@ class CartsController < ApplicationController
   	redirect_to home_index_path
 
   end
+
 end
