@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Merci d'avoir commandé sur notre site <%= @user.username %></h1>
+    <p>
+      Voici le récapitulatif de votre commande :
+    </p>
+    <table>
+      <tr>
+        <th>Nom de la photo</th>
+        <th>Description</th>
+        <th>Prix</th>
+        <th>Produit</th>
+      </tr>
+
+      <% @products.each do |product| %> 
+
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= image_tag product.image_url %></td>
+      </tr>
+      <% end %>
+    </table>
+    <br />
+    <h2>A bientôt <%= @user.username %> !</h2>
+  </body>
+</html>
