@@ -28,7 +28,7 @@
                                     <%= @product.description %>
                                 </p>
                                 <div class="add-buttons">
-                                    <%= link_to "Ajouter au panier", addtocart_path, method: :post, class: "btn btn-skin btn-lg" %>
+                                    <%= link_to content_tag(:i,nil, class: "fa fa-shopping-cart") + "Ajouter au panier", addtocart_path, method: :post, class: "btn btn-skin btn-lg" %>
                                 </div>
                             </div>
                         </div>

@@ -5,8 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.firs
+User.create(email:"jean.bernard@gmail.com", username:"jeanbernard", password:"jeanbernard", password_confirmation:"jeanbernard")
+User.create(email:"alfred.duverger@gmail.com", username:"alfred", password:"alfredduverger", password_confirmation:"alfredduverger")
+User.create(email:"xavier.leboucher@gmail.com", username:"xavier", password:"xavierleboucher", password_confirmation:"xavierleboucher")
+User.create(email:"edouard.lachaise@gmail.com", username:"edouard", password:"edouardlachaise", password_confirmation:"edouardlachaise")
 
-<<<<<<< HEAD
 Cart.create(name:"Mon Panier", user_id:1)
 Cart.create(name:"Mon Panier", user_id:2)
 
@@ -41,4 +44,3 @@ Product.create(title:"Djo", description: "Où sont mes oreille", price: 19.99, i
 Product.create(title:"Pepsi", description: "tout est dans le regard", price: 25.99, image_url: "chat/13.jpg")
 Product.create(title:"Pepito", description: "hey", price: 8.99, image_url: "chat/19.jpg")
 Product.create(title:"ROAR", description: "C'est qui le papa", price: 159.99, image_url: "bchat/1.jpg")
-
