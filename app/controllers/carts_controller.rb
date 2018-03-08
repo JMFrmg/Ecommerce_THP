@@ -39,8 +39,8 @@ class CartsController < ApplicationController
   def buy
 
     require 'stripe'
-    @order = Order.find(current_user.id)
-    @products = @order.products
+    @cart = current_user.cart
+    @products = @cart.products
     @sum = 0
     @products.each do |product|
       @sum += product.price
@@ -65,8 +65,14 @@ class CartsController < ApplicationController
     @user.orders << @order
     @user.save
     @order.save
+    
+    
+
+    UserMailer.buy_email(@user, @products).deliver_now!
+
     @user.cart.destroy
-    flash[:success] = "Merci pour votre achat :)"
+    flash[:success] = "Merci pour votre achat, un mail récapitulatif de votre commande vous a été envoyé"
+
     redirect_to root_path
   end
 

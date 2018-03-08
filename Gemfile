@@ -41,6 +41,7 @@ gem 'jquery'
 #gem 'pg', '0.20.0'
 gem 'sqlite3'
 gem 'stripe'
+gem 'mailjet'
 
 
 group :development, :test do
