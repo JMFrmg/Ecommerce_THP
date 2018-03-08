@@ -69,14 +69,12 @@
                                       <% end %>
                                       </div><!--cart item-->
                                       <div class="cart-footer">
-                                          <a href="#" class="btn btn-light-dark"> View Cart</a>
-                                          <a href="#" class="btn btn-skin"> Checkout</a>
+                                        <%=link_to "Panier", :controller => :carts, :action => :show, :class => "btn btn-light-dark" %>
                                         </div>
                                     </div><!--cart-items-->
                                   </div><!--footer of cart-->
-                              <% end %>
-
                           </div><!--cart dropdown end-->
+                        <% end %>
                       </li>
                   </ul>
               </div><!--/.nav-collapse -->
