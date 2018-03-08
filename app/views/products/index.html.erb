@@ -1,0 +1,46 @@
+<!--breadcrumb start-->
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <h1>Chatons</h1>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+
+        <div class="space-60"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <% @products.each do |product| %>
+                    <div class="product-list">
+                        <div class="row">
+                            <div class="col-md-4 margin-b-30">
+                                <div class="product-list-thumb">
+                                    <%= image_tag product.image_url, alt:"Product image", class: "img-responsive"  %>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="product-list-desc">
+                                    <h3 class="title"><%= product.title %></h3>
+                                    <span class="price"><%= product.price%>€</span>
+                                    <p>
+                                        <%= product.description %>
+                                    </p>
+                                    <div class="icon-list">
+                                      <%= link_to "Ajouter au panier", addtocart_path(product), method: :post, class: "btn btn-skin btn-lg" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--products list-->
+                    <!--pagination-->
+                    <% end %>
+                    <nav>
+                        <ul class="pagination pull-right clearfix">
+                            <li><%= will_paginate @products, renderer: BootstrapPagination::Rails %></li>
+                        </ul>
+                    </nav>
+                    <!--pagination end-->
+                </div>
+            </div>
+        </div>
+        <div class="space-60"></div>

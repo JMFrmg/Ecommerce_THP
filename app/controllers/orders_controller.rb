@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :ensure_login
   def index
   	@orders = current_user.orders
-
   end
 
   def show
@@ -10,6 +9,6 @@ class OrdersController < ApplicationController
   	@products = @order.products
   end
 
-  
-  
+
+
 end

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'carts/show', to: 'carts#show'
 
+  get 'products/index', to: 'products#index'
+
   devise_for :users
   get 'home/index'
 
