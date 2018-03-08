@@ -6,35 +6,6 @@
 /*
  * 	Default theme - Owl Carousel CSS File
  */
-
-@media (min-width: 768px) {
-  .container {
-    /* background: #eee; */
-    margin: 0 auto;
-    overflow: hidden;
-    width: 1200px;
-  }
-  .owl-carousel {
-    margin: 0 -60px;
-    position: relative;
-    width: 820px;
-  }
-  .owl-item > div {
-    margin: 45px 60px;
-    transition: margin 400ms ease-out;
-  }
-  .owl-item.center > div {
-    margin: 0;
-  }
-  .owl-next {
-    right: 60px;
-  }
-  .owl-prev {
-    left: 60px;
-  }
-  .icon-arrow-left7 { left: auto; right: 0; }
-  .icon-arrow-right7{ left: 0; right: autp; }
-}
 .owl-theme .owl-nav {
   margin-top: 10px;
   text-align: center;
