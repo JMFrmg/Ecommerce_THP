@@ -11,12 +11,12 @@ class CartsController < ApplicationController
   	@product = Product.find(params[:id])
     if (@cart.products).include? @product
       flash[:notice] = "Vous avez déjà acheté cette photo!"
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
   	  @cart.products << @product
   	  @cart.save
       flash[:notice] = "La photo a bien été ajoutée à votre panier"
-  	  redirect_to home_index_path
+      redirect_back(fallback_location: root_path)
     end
   end
 

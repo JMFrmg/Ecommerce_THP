@@ -21,25 +21,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                      <% @products.each do |product| %>
                         <tr>
-                            <% @products.each do |product| %>
-                              <% @sumprices += product.price %>
-                              <td class="product-image">
-                                <%= image_tag(product.image_url, :atl => "", :width => 300, :height => 250, :crop => :fill) %>
-                              </td>
+                              <td class="product-image"><%= image_tag(product.image_url, :atl => "", :width => 300, :height => 250, :crop => :fill) %></td>
                               <td class='product-name'><%= product.title %></td>
                               <td class="product-price"><%= product.price %></td>
-                              <td class='product-delete'><%= link_to "Supprimer du panier", removeproduct_path(product), method: :post, class: "btn btn-secondary" %><i class="fa fa-times"></i></td>
-
-                            <% end %>
-
-
-
-
-
-
+                              <td class='product-delete'><%= link_to "Supprimer du panier", removeproduct_path(product), method: :post, :class => "btn btn-danger btn-xm" %></td>
+                              <% @sumprices += product.price %>
                         </tr>
-
+                        <% end %>
                     </tbody>
                 </table><!--cart table-->
             </div>
