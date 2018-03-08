@@ -43,6 +43,7 @@ gem 'jquery'
 gem 'sqlite3'
 gem 'stripe'
 gem 'mailjet'
+gem 'dotenv'
 
 
 group :development, :test do
