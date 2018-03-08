@@ -13,6 +13,7 @@
                           <li class="hidden-xs"><a href="#" class="offers">Nouveau</a></li>
                           <li class="hidden-xs"><strong><%= current_user.username.capitalize %></strong></li>
                           <li class="hidden-xs"><%= link_to "Profil", edit_user_registration_path %></li>
+                          <li class="hidden-xs"><%=link_to "Mon panier", cart_path(current_user.cart) %></li>
                           <li class="hidden-xs"><%= link_to content_tag(:i, nil, class: 'pe-7s-user') + " Deconnexion ", destroy_user_session_path, :method => :delete %></li>
                           <% else %>
                           <li class="hidden-xs"><a href="#" class="offers">Nouveau</a></li>
@@ -68,9 +69,6 @@
                                       </div>
                                       <% end %>
                                       </div><!--cart item-->
-                                      <div class="cart-footer">
-                                        <%=link_to "Panier", :controller => :carts, :action => :show, :class => "btn btn-light-dark" %>
-                                        </div>
                                     </div><!--cart-items-->
                                   </div><!--footer of cart-->
                           </div><!--cart dropdown end-->
