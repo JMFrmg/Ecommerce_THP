@@ -553,6 +553,8 @@ del {
 .footer {
   padding: 60px 0;
   background-color: #333;
+  display : flex;
+  justify-content:space-between;
 }
 .footer h3 {
   color: #eee;
