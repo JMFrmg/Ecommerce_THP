@@ -100,8 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /**margins**/
 .margin-b-30 {
-  margin-left: 200px;
-
+  margin-bottom: 30px;
 }
 
 .margin-b-20 {
@@ -556,7 +555,6 @@ del {
   background-color: #333;
   display : flex;
   justify-content:space-between;
-
 }
 .footer h3 {
   color: #eee;
