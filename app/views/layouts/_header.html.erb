@@ -37,7 +37,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <%= link_to(image_tag("cat-logoo.png", :alt => "logo", :class => "navbar-brand", :width => 73 ), root_path ) %>
+                  <%= link_to(image_tag("cat-logoo.png", :alt => "logo", :class => "navbar-brand", :width => 70), root_path ) %>
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
@@ -45,7 +45,7 @@
                       <li class="dropdown">
                           <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true">Chatons <i class="fa fa-angle-down"></i></a>
                           <ul class="dropdown-menu">
-                              <li><a href="#">Pleins de chatons</a></li>
+                              <li><%=link_to "Photos de chats", products_path %></li>
                           </ul>
                       </li>
                   </ul>
