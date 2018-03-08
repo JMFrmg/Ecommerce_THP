@@ -8,18 +8,26 @@ class CartsController < ApplicationController
 
   def addproduct
   	@cart = current_user.cart
-  	@product = Product.find(params[id])
-  	@cart.products << @product
-  	@cart.save
-  	redirect_to home_index_path
+  	@product = Product.find(params[:id])
+    if (@cart.products).include? @product
+      flash[:notice] = "Vous avez déjà acheté cette photo!"
+      redirect_to root
+    else
+  	  @cart.products << @product
+  	  @cart.save
+      flash[:notice] = "La photo a bien été ajoutée à votre panier"
+  	  redirect_to home_index_path
+    end
   end
 
-  def takeoff
+  def removeproduct
     @cart = current_user.cart
-    @product = Product.find(params[id])
+    @product = Product.find(params[:id])
     @cart.products.delete(@product)
     redirect_to @cart
   end
+
+  
 
   def destroy
   	@cart = current_user.cart

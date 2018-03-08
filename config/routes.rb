@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   post 'carts/buy/:id', to: 'carts#buy', as: 'buycart'
 
-  post 'carts/addproduct'
+  post 'carts/addproduct/:id', to: 'carts#addproduct', as: 'addtocart'
+
+  post 'carts/removeproduct/:id', to: 'carts#removeproduct', as: 'removeproduct'
+
+
 
   devise_for :users
   get 'home/index'

@@ -30,7 +30,7 @@
                               </td>
                               <td class='product-name'><%= product.title %></td>
                               <td class="product-price"><%= product.price %></td>
-                              <td class='product-delete'><%= link_to "Supprimer du panier", class: "btn btn-secondary" %><i class="fa fa-times"></i></td>
+                              <td class='product-delete'><%= link_to "Supprimer du panier", removeproduct_path(product), method: :post, class: "btn btn-secondary" %><i class="fa fa-times"></i></td>
 
                             <% end %>
 

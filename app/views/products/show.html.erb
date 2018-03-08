@@ -32,14 +32,16 @@
                                     <i class="fa fa-star-half-full"></i>
                                     <a href="#">8 Reviews</a>
                                 </span>
+
                                 <p>
                                     <%= @product.description %>
                                 </p>
                                 
                                 <div class="add-buttons">
-                                    <%= link_to content_tag(:i,nil, class: "fa fa-shopping-cart") + "Ajouter au panier", carts_addproduct_path, method: "post" , class: "btn btn-skin btn-lg" %>
+                                    <%= link_to "Ajouter au panier", addtocart_path, method: :post, class: "btn btn-skin btn-lg" %>
                                 </div>
                             </div>
+
                         </div>
                     </div><!--single product details end-->
                     <div class="space-40"></div>
@@ -160,11 +162,13 @@
                                     </div>
                                 </div>
 
+
                             </div>
                         </div>
                     </div>
 
                 </div>
+
 
                 <div class="col-md-3">
                     <div class="sidebar-widget">
@@ -247,6 +251,7 @@
         </div>
     </div>
 
+
 <script>
           $(document).ready(function(){
         $('.owl-carousel').owlCarousel({
@@ -256,3 +261,4 @@
 });
 </script>
 >>>>>>> itemview
+
