@@ -1,15 +1,21 @@
-<h1>Liste de mes commandes</h1>
-<table>
+<h1>Liste de mes achats</h1>
+
+	<table>
 	<tr>
-		<th>Date de la commande</th>
-		<th>Nombre d'articles achetés</th>
+		<th>Titre de la photo</th>
+		<th>Description</th>
+		<th>Prix</th>
 	</tr>
 	<% @orders.each do |order| %>
-	<tr>
-		<td><%= order.created_at %></td>
-		<td><%= order.products.length %></td>
-		
-		
-	</tr>
+		<% @products = order.products %>
+	  	<% @products.each do |product| %>
+		<tr>
+			<td><%= product.title %></td>
+			<td><%= product.description %></td>
+			<td><%= product.price %></td>
+			<td><%= product.image_url %></td>		
+		</tr>
+		<% end %>  
 	<% end %>
-</table>
+	</table>
+
