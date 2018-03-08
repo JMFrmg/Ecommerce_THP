@@ -11,7 +11,7 @@ class CartsController < ApplicationController
   	@product = Product.find(params[:id])
     if (@cart.products).include? @product
       flash[:notice] = "Vous avez déjà acheté cette photo!"
-      redirect_to root
+      redirect_to root_path
     else
   	  @cart.products << @product
   	  @cart.save
@@ -27,7 +27,7 @@ class CartsController < ApplicationController
     redirect_to @cart
   end
 
-  
+
 
   def destroy
   	@cart = current_user.cart
@@ -42,7 +42,7 @@ class CartsController < ApplicationController
     @order = Order.find(current_user.id)
     @products = @order.products
     @sum = 0
-    @products.each do |product| 
+    @products.each do |product|
       @sum += product.price
     end
     @amount = (@sum*100).to_i
@@ -66,8 +66,8 @@ class CartsController < ApplicationController
     @user.save
     @order.save
     @user.cart.destroy
-    flash[:success] = "Merci pour votre achat :)" 
+    flash[:success] = "Merci pour votre achat :)"
     redirect_to root_path
-    end
+  end
 
 end
