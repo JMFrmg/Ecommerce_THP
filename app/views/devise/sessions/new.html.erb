@@ -1,6 +1,5 @@
 
 
-
  <div class="breadcrumb-wrapper">
             <div class="container">
                 <h1>Connection</h1>
@@ -14,7 +13,7 @@
                 <div class="col-md-6">
                     <div class="sky-form-login">
                       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                            <h3 class="text-left"><i class="fa fa-user"></i>Créez votre compte</h3>
+                            <h3 class="text-left"><i class="fa fa-user"></i>Connectez vous</h3>
 
                             <fieldset>          
                                 <section>
@@ -30,7 +29,10 @@
                                         <i class="icon-append fa fa-lock"> </i>
                                             <% f.label :password %>
                                             <%= f.password_field :password, autocomplete: "off", placeholder: "Votre mot de passe ..." %>
-                                            <div class="note"><a href="#sky-form2" class="modal-opener">Forgot password?</a></div>
+                                            <br />
+                                            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                                              <%= link_to "Mot de passe oublié?", new_password_path(resource_name) %><br />
+                                              <% end -%>
                                     </div>
                                 </section>
 
@@ -66,10 +68,7 @@
                     </div>
                 </div>
             </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 

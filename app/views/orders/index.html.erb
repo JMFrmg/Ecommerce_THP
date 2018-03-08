@@ -1,15 +1,48 @@
-<h1>Liste de mes commandes</h1>
-<table>
-	<tr>
-		<th>Date de la commande</th>
-		<th>Nombre d'articles achetés</th>
-	</tr>
-	<% @orders.each do |order| %>
-	<tr>
-		<td><%= order.created_at %></td>
-		<td><%= order.products.length %></td>
-		
-		
-	</tr>
-	<% end %>
-</table>
+
+
+           <!--breadcrumb start-->
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <h1>Historique des achats</h1>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+
+        <div class="space-60"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-8">
+
+                </div>
+            </div>
+            	<% @orders.each do |order| %>
+        		<% @products = order.products %>
+        		<h3>Date de la commande : <%= order.created_at.strftime("le %d-%m-%Y à %HH%M") %></h3>
+            <div class="table-responsive table-order-history">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Titre</th>
+                            <th>description</th>
+                            <th>Status</th>
+                            <th>Pris</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    		<% @products.each do |product| %>
+                        <tr>
+                            <td valign="middle"><%= image_tag product.image_url, :alt => "", :width => "150" %></td>
+                            <td valign="middle"><%= product.title %></td>
+                            <td valign="middle"><%= product.description %></td>
+                            <td><span class="label-success"><i class="fa fa-check"></i></span> Success</td>
+                            <td><%= product.price %></td>
+                        </tr>
+                        	<% end %>
+                        </tbody>
+                    </table>
+
+                </div>
+                <% end %>
+            </div>
