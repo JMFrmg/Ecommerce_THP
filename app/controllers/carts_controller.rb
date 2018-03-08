@@ -69,7 +69,7 @@ class CartsController < ApplicationController
     
 
     UserMailer.buy_email(@user, @products).deliver_now!
-    UserMailer.emails_to_admins(@user, @products).deliver_now!
+ #   UserMailer.emails_to_admins(@user, @products).deliver_now!
 
     @user.cart.destroy
     flash[:success] = "Merci pour votre achat, un mail récapitulatif de votre commande vous a été envoyé"
