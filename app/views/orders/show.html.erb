@@ -1,20 +1,47 @@
-<h1>Détails de la commande :</h1>
-<p>Date de la commande : <%= @order.created_at %> </p>
 
-<table>
-	<tr>
-		<th>Titre de la photo</th>
-		<th>Description</th>
-		<th>Prix</th>
-	</tr>
-	<% @products.each do |product| %>
-	<tr>
-		<td><%= product.title %></td>
-		<td><%= product.description %></td>
-		<td><%= product.price %></td>
-		<td><%= product.image_url %></td>
-		
-		
-	</tr>
-	<% end %>
-</table>
+        <!--breadcrumb start-->
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <h1>Détails de la commande</h1>
+            </div>
+        </div>
+        <!--end breadcrumb-->
+
+        <div class="space-60"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-8">
+                        Date de la commande : <%= @order.created_at %> 
+                </div>
+            </div>
+            <div class="table-responsive table-order-history">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Titre</th>
+                            <th>description</th>
+                            <th>Status</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    		<% @products.each do |product| %>
+                        <tr>
+                            <td valign="middle"><%= image_tag product.image_url, :alt => "", :width => "150" %></td>
+                            <td valign="middle"><%= product.title %></td>
+                            <td valign="middle"><%= product.description %></td>
+                            <td><span class="label-success"><i class="fa fa-check"></i></span> Success</td>
+                            <td><%= product.price %></td>
+                        </tr>
+                        	<% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+
+
+
+                            
