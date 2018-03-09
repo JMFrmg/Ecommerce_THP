@@ -23,6 +23,6 @@ Lien heroku :  https://paradis-des-chatons.herokuapp.com/
 
 # Le front : 
 * Notre js ne fonctionne pas sur heroku :disappointed_relieved:
-
+* Pour le reste, petite précision, les articles cliquables ne démarrent qu'à partir des produits populaires
 
 ## Bonne lecture ! :yum:
