@@ -3,7 +3,7 @@
 ## Bienvenue sur notre app de chats :heartbeat:
 
 Voici le lien heroku :
-Lien heroku :  https://paradis-des-chatons.herokuapp.com/
+Lien heroku :  https://le-paradis-des-chatons.herokuapp.com/
 
 # Le back :
 * Vous pouvez créer un compte et vous connecter
