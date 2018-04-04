@@ -1,4 +1,4 @@
-## Notre README des familles ! 
+## Projet : Codez votre site de e-commerce en 4 jours
 
 ## Bienvenue sur notre app de chats :heartbeat:
 
