@@ -22,7 +22,6 @@ Lien heroku :  https://le-paradis-des-chatons.herokuapp.com/
 * Vous pouvez cliquer sur l'onglet 'mes achats' pour consulter l'ensemble des photos que vous avez acheté avec ce compte
 
 # Le front : 
-* Notre js ne fonctionne pas sur heroku :disappointed_relieved:
 * Pour le reste, petite précision, les articles cliquables ne démarrent qu'à partir des produits populaires
 
 ## Bonne lecture ! :yum:
